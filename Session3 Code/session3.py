@@ -3,7 +3,7 @@ import singlestoredb as db
 from openai import OpenAI
 import os
 
-os.environ["OPENAI_API_KEY"]="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"
+os.environ["OPENAI_API_KEY"]="key"
 client = OpenAI()
 
 
@@ -15,8 +15,8 @@ def get_embedding(text, model="text-embedding-3-small"):
    return client.embeddings.create(input = [text], model=model).data[0].embedding
 
 def connector():
-    return db.connect(host='svc-3482219c-a389-4079-b18b-d50662524e8a-shared-dml.aws-virginia-6.svc.singlestore.com', port='3333', user='sumanth',
-                  password='xIJaS1GmeMaNHqYeHeETVe0HvEk4FCw4', database='database_3bc91')
+    return db.connect(host='', port='3333', user='',
+                  password='', database='database_3bc91')
 
 def read_vectors(vector):
     output = []
